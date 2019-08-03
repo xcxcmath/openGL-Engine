@@ -35,8 +35,9 @@ GLEngine::Shader::Shader(std::string source, GLenum shaderType)
         glGetShaderiv(m_id, GL_INFO_LOG_LENGTH, &infoLogLength);
         auto infoLog = new GLchar[infoLogLength + 1];
         glGetShaderInfoLog(m_id, infoLogLength, nullptr, infoLog);
+        std::string infoLogStr(infoLog);
         delete[] infoLog;
-        throw GLEngine::Exception(std::string("Shader could not compile: ") + infoLog + "\n");
+        throw GLEngine::Exception(std::string("Shader could not compile: ") + infoLogStr);
     }
 }
 
