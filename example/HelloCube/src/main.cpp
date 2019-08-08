@@ -61,7 +61,7 @@ private:
         glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
         glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 
-        m_window = glfwCreateWindow(g_window_width, g_window_height, "HelloCube", nullptr, nullptr);
+        m_window = glfwCreateWindow(g_framebuffer_width, g_framebuffer_height, "HelloCube", nullptr, nullptr);
         glfwMakeContextCurrent(m_window);
     }
 
